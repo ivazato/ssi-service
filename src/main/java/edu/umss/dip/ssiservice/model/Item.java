@@ -1,9 +1,14 @@
 package edu.umss.dip.ssiservice.model;
 
-public class Item {
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Item extends ModelBase {
     private String name;
     private String code;
     private Byte[] img;
+    @OneToOne(targetEntity = SubCategory.class)
     private SubCategory subCategory;
 
 
