@@ -39,11 +39,11 @@ public class Employee extends ModelBase {
         this.image = image;
     }
 
-    public List<Contract> getContract() {
+    public List<Contract> getContracts() {
         return contract;
     }
 
-    public void setContract(List<Contract> contract) {
+    public void setContracts(List<Contract> contract) {
         this.contract = contract;
     }
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Item List</h1>
+<!--Crear un template para Items donde se vea los datos del ítem,
+su subcategoría y su categoría-->
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Subcategory</th>
+        <th>Category</th>
+    </tr>
+    <tr th:each="item:${items}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.code}"></td>
+        <td th:text="${item.name}"></td>
+        <td>
+            <table>
+                <tr>
+                    <td th:text="${item.subCategory.code}"></td>
+                    <td th:text="${item.subCategory.name}"></td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td th:text="${item.subCategory.category.code}"></td>
+                    <td th:text="${item.subCategory.category.name}"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>
