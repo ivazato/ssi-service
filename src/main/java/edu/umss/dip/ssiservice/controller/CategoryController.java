@@ -7,17 +7,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class CategoryController {
-
     private CategoryRepository categoryRepository;
-
-    @RequestMapping("/categories")
-    public String getEmployees(Model model) {
-
-        model.addAttribute("categories", categoryRepository.findAll());
-        return "categories";
-    }
 
     public CategoryController(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
+
+    @RequestMapping("/categories")
+    public String getCategories(Model model) {
+        model.addAttribute("categories", categoryRepository.findAll());
+        return "categories";
+    }
+
 }

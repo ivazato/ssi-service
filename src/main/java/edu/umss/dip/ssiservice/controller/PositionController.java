@@ -8,8 +8,12 @@ public class PositionController {
 
     private PositionRepository positionRepository;
 
+    public PositionController(PositionRepository positionRepository) {
+        this.positionRepository = positionRepository;
+    }
+
     @RequestMapping("/positions")
-    public String getEmployees(Model model) {
+    public String getPositions(Model model) {
         model.addAttribute("positions", positionRepository.findAll());
         return "positions";
     }
